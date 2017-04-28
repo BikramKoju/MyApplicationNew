@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -27,6 +28,8 @@ public class TypeB extends Fragment {
 
     SharedPreferences.Editor editor;
     SharedPreferences sharedPreferences;
+    TextView result;
+    long sum;
 
 
     public TypeB() {
@@ -47,6 +50,7 @@ public class TypeB extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        result= (TextView) view.findViewById(R.id.resultb);
         gridView=(GridView)view.findViewById(R.id.gridViewb);
         gridViewAdapter=new GridViewAdapter(getActivity(),R.layout.grid_item_layout2,getData());
         gridView.setAdapter(gridViewAdapter);
@@ -59,14 +63,16 @@ public class TypeB extends Fragment {
 
 
                 long value = Long.parseLong(item.getTitle());
-                long sum = sharedPreferences.getLong("sum", 0);
+                //long sum = sharedPreferences.getLong("sum", 0);
                 sum = sum - value;
+
+                result.setText(String.valueOf(sum));
 
 
                 //minus=minus+value;
                 //  sum=value;
 
-                editor.putLong("sum", sum);
+               /* editor.putLong("sum", sum);
                 // editor.putLong("minus",minus);
                 editor.commit();
 
@@ -74,7 +80,7 @@ public class TypeB extends Fragment {
                 intent.putExtra("title", String.valueOf(sum));
 
                 startActivity(intent);
-                getActivity().overridePendingTransition(0,0);
+                getActivity().overridePendingTransition(0,0);*/
             }
         });
 

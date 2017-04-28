@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.astuetz.PagerSlidingTabStrip;
 
+
 import static com.example.bikramkoju.myapplicationnew.R.attr.title;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,22 +21,26 @@ public class MainActivity extends AppCompatActivity {
     PagerSlidingTabStrip pagerSlidingTabStrip;
     ViewPager viewPager;
     ViewPagerAdapter viewPagerAdapter;
-    TextView textView;
+
+
+   // TextView textView;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        textView= (TextView) findViewById(R.id.result);
+
+
+        //textView= (TextView) findViewById(R.id.result);
 
        /* SharedPreferences sharedPreferences =getSharedPreferences("values",0);
         SharedPreferences.Editor editor=sharedPreferences.edit();
         long sum=sharedPreferences.getLong("sum",0);*/
 
-                String title = getIntent().getStringExtra("title");
+               /* String title = getIntent().getStringExtra("title");
                 if(title!=null) {
-                   /* long value = Long.parseLong(title);
+                   *//* long value = Long.parseLong(title);
                     sum =sum + value;
 
 
@@ -44,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
                     editor.putLong("sum",sum);
                     // editor.putLong("minus",minus);
-                    editor.commit();*/
+                    editor.commit();*//*
 
 
 
@@ -56,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 else {
                     textView.setText("result");
 
-                }
+                }*/
 
         pagerSlidingTabStrip=(PagerSlidingTabStrip)findViewById(R.id.pager_tabs);
         viewPager =(ViewPager)findViewById(R.id.viewpager);
@@ -65,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
         viewPagerAdapter.addFragments(new TypeB(),"Type B");
         viewPager.setAdapter(viewPagerAdapter);
         pagerSlidingTabStrip.setViewPager(viewPager);
+
     }
     /*public void setNumber(int position){
 

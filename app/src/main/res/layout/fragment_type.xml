@@ -5,11 +5,30 @@
     android:background="#802727"
     tools:context="com.example.bikramkoju.myapplicationnew.TypeA">
 
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/resulta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:text="RS"
+        android:textColor="#58de23"
+        android:textSize="50dp"
+        android:paddingBottom="20dp"
+
+        />
+
     <!-- TODO: Update blank fragment layout -->
     <GridView
         android:id="@+id/gridView"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:paddingTop="20dp"
         android:layout_margin="5dp"
         android:columnWidth="100dp"
         android:drawSelectorOnTop="true"
@@ -20,5 +39,13 @@
         android:focusable="true"
         android:stretchMode="spacingWidthUniform"
         android:clickable="true"/>
+
+       <Button
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:gravity="center"
+           android:text="Addition"/>
+
+   </LinearLayout>
 
 </FrameLayout>

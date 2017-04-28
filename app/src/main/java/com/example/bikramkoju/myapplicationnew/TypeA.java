@@ -28,10 +28,12 @@ import java.util.ArrayList;
 public class TypeA extends Fragment {
     private GridView gridView;
     private GridViewAdapter gridViewAdapter;
+    TextView result;
 
 
     SharedPreferences.Editor editor;
     SharedPreferences sharedPreferences;
+     long sum;
     //=this.getActivity().getSharedPreferences("values",0);
     //double add=0.0;
 
@@ -52,6 +54,8 @@ public class TypeA extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        result= (TextView) view.findViewById(R.id.resulta);
+
         sharedPreferences = this.getActivity().getSharedPreferences("values", 0);
          editor = sharedPreferences.edit();
       //  long sum = sharedPreferences.getLong("sum", 0);
@@ -62,6 +66,7 @@ public class TypeA extends Fragment {
         gridView.setAdapter(gridViewAdapter);
 
 
+
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
@@ -70,26 +75,30 @@ public class TypeA extends Fragment {
                 ImageItem item = (ImageItem) parent.getItemAtPosition(position);
 
                 long value = Long.parseLong(item.getTitle());
-                long sum = sharedPreferences.getLong("sum", 0);
+
+
                 sum = sum + value;
+
+
+                result.setText(String.valueOf(sum));
 
 
                 //minus=minus+value;
                 //  sum=value;
 
-                editor.putLong("sum", sum);
+               // editor.putLong("sum", sum);
                 // editor.putLong("minus",minus);
-                editor.commit();
+               // editor.commit();
 
 
-                Intent intent = new Intent(getActivity(), MainActivity.class);
+               /* Intent intent = new Intent(getActivity(), MainActivity.class);
                 intent.putExtra("title", String.valueOf(sum));
 
                 //intent.putExtra("image", item.getImage());
 
                 //Start details activity
                 startActivity(intent);
-                getActivity().overridePendingTransition(0,0);
+                getActivity().overridePendingTransition(0,0);*/
             }
 
 
