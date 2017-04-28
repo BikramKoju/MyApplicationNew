@@ -24,4 +24,24 @@
         <item>@drawable/image_8</item>
         <item>@drawable/image_9</item>
     </string-array>
+    <string-array name="numbers">
+        <item>1200</item>
+        <item>12678</item>
+        <item>12789</item>
+        <item>1200</item>
+        <item>120</item>
+        <item>1200</item>
+        <item>1240</item>
+        <item>1200</item>
+        <item>1260</item>
+        <item>1200</item>
+        <item>1200</item>
+        <item>1200</item>
+        <item>100</item>
+        <item>1200</item>
+        <item>1700</item>
+        <item>3200</item>
+        <item>200</item>
+        <item>1200</item>
+    </string-array>
 </resources>

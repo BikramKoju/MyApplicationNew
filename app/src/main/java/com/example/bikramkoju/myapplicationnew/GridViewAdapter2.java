@@ -12,16 +12,16 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 /**
- * Created by Bikramkoju on 4/25/2017.
+ * Created by Bikramkoju on 4/27/2017.
  */
 
-public class GridViewAdapter extends ArrayAdapter<ImageItem> {
+public class GridViewAdapter2 extends ArrayAdapter<ImageItem2>{
 
     private Context context;
     private int layoutResourceId;
-    private ArrayList<ImageItem> data = new ArrayList<ImageItem>();
+    private ArrayList<ImageItem2> data = new ArrayList<ImageItem2>();
 
-    public GridViewAdapter(Context context, int layoutResourceId, ArrayList<ImageItem> data) {
+    public GridViewAdapter2(Context context, int layoutResourceId, ArrayList<ImageItem2> data) {
         super(context, layoutResourceId, data);
         this.layoutResourceId = layoutResourceId;
         this.context = context;
@@ -31,19 +31,19 @@ public class GridViewAdapter extends ArrayAdapter<ImageItem> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View row = convertView;
-        ViewHolder holder;
+        GridViewAdapter2.ViewHolder holder;
 
         if (row == null) {
             LayoutInflater inflater = ((Activity) context).getLayoutInflater();
             row = inflater.inflate(layoutResourceId, parent, false);
-            holder = new ViewHolder();
+            holder = new GridViewAdapter2.ViewHolder();
             holder.imageTitle = (TextView) row.findViewById(R.id.text);
             holder.image = (ImageView) row.findViewById(R.id.image);
             row.setTag(holder);
         } else {
-            holder = (ViewHolder) row.getTag();
+            holder = (GridViewAdapter2.ViewHolder) row.getTag();
         }
-        ImageItem item = data.get(position);
+        ImageItem2 item = data.get(position);
         holder.imageTitle.setText(item.getTitle());
         holder.image.setImageBitmap(item.getImage());
         return row;
@@ -53,4 +53,5 @@ public class GridViewAdapter extends ArrayAdapter<ImageItem> {
         TextView imageTitle;
         ImageView image;
     }
+
 }
